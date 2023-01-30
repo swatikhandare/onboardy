@@ -1,2 +1,2 @@
 # onboardy
-action learning project
+Action Learning project: OnBoardy
