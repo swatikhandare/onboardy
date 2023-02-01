@@ -1,0 +1,42 @@
+[
+  {
+    "id": "fccbeb21-3bf6-4623-ab58-4edc93f41030",
+    "label": "international",
+    "description": "All international students"
+  },
+  {
+    "id": "f54cb2ee-1171-4306-95c5-b65314e7220b",
+    "label": "local",
+    "description": "all local students"
+  },
+  {
+    "id": "b823f2c3-af67-4bd7-916f-4f9b70587559",
+    "label": "under-26",
+    "description": "Students who are younger than 26 years old"
+  },
+  {
+    "id": "c6345f4f-48fe-4746-9f70-eef0acacb646",
+    "label": "over-25",
+    "description": "Students who are older than 25 years old"
+  },
+  {
+    "id": "a403473b-8a18-4b09-8b6f-b309e3700fb5",
+    "label": "male",
+    "description": "Male students"
+  },
+  {
+    "id": "8c75b499-d697-497f-a29a-b7c2ffbbfcf4",
+    "label": "female",
+    "description": "Female students"
+  },
+  {
+    "id": "2ab7160d-ea5f-4f29-8d32-f933c0720bb3",
+    "label": "CS",
+    "description": "Computer Science students"
+  },
+  {
+    "id": "c6cf6768-0aa7-46b0-8a1e-8aca9021d321",
+    "label": "eu-student",
+    "description": "Students from countries under the European-Union"
+  }
+]

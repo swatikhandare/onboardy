@@ -1,0 +1,667 @@
+[
+  {
+    "firstName": "Nat",
+    "lastName": "Mraz",
+    "email": "Alan61@example.org",
+    "dob": "1997-01-07",
+    "gender": "M",
+    "nationality": "France",
+    "id": "f13297e7-3c47-4fbe-8c33-68e54ba8aa50",
+    "tags": [
+      {
+        "id": "b823f2c3-af67-4bd7-916f-4f9b70587559",
+        "label": "under-26",
+        "description": "Students who are younger than 26 years old"
+      },
+      {
+        "id": "a403473b-8a18-4b09-8b6f-b309e3700fb5",
+        "label": "male",
+        "description": "Male students"
+      },
+      {
+        "id": "2ab7160d-ea5f-4f29-8d32-f933c0720bb3",
+        "label": "CS",
+        "description": "Computer Science students"
+      },
+      {
+        "id": "c6cf6768-0aa7-46b0-8a1e-8aca9021d321",
+        "label": "eu-student",
+        "description": "Students from countries under the European-Union"
+      }
+    ],
+    "assignedTasks": []
+  },
+  {
+    "firstName": "Anais",
+    "lastName": "Boehm",
+    "email": "Everette.Mann11@example.com",
+    "dob": "2000-05-04",
+    "gender": "M",
+    "nationality": "Ireland",
+    "id": "8125676e-8c04-4501-8ef7-6d58f4eee329",
+    "tags": [
+      {
+        "id": "fccbeb21-3bf6-4623-ab58-4edc93f41030",
+        "label": "international",
+        "description": "All international students"
+      },
+      {
+        "id": "b823f2c3-af67-4bd7-916f-4f9b70587559",
+        "label": "under-26",
+        "description": "Students who are younger than 26 years old"
+      },
+      {
+        "id": "a403473b-8a18-4b09-8b6f-b309e3700fb5",
+        "label": "male",
+        "description": "Male students"
+      },
+      {
+        "id": "2ab7160d-ea5f-4f29-8d32-f933c0720bb3",
+        "label": "CS",
+        "description": "Computer Science students"
+      },
+      {
+        "id": "c6cf6768-0aa7-46b0-8a1e-8aca9021d321",
+        "label": "eu-student",
+        "description": "Students from countries under the European-Union"
+      }
+    ],
+    "assignedTasks": []
+  },
+  {
+    "firstName": "Rosina",
+    "lastName": "Torp",
+    "email": "Craig_Purdy@example.com",
+    "dob": "1990-01-03",
+    "gender": "F",
+    "nationality": "Turkey",
+    "id": "99ea356b-9620-4cca-80bd-0ee5fbc86dcb",
+    "tags": [
+      {
+        "id": "fccbeb21-3bf6-4623-ab58-4edc93f41030",
+        "label": "international",
+        "description": "All international students"
+      },
+      {
+        "id": "c6345f4f-48fe-4746-9f70-eef0acacb646",
+        "label": "over-25",
+        "description": "Students who are older than 25 years old"
+      },
+      {
+        "id": "8c75b499-d697-497f-a29a-b7c2ffbbfcf4",
+        "label": "female",
+        "description": "Female students"
+      },
+      {
+        "id": "2ab7160d-ea5f-4f29-8d32-f933c0720bb3",
+        "label": "CS",
+        "description": "Computer Science students"
+      }
+    ],
+    "assignedTasks": []
+  },
+  {
+    "firstName": "Cyril",
+    "lastName": "Lindgren",
+    "email": "Eryn99@example.com",
+    "dob": "1992-12-23",
+    "gender": "M",
+    "nationality": "Guam",
+    "id": "23cf0cee-64c0-4b5b-bc03-e2d8f0414927",
+    "tags": [
+      {
+        "id": "fccbeb21-3bf6-4623-ab58-4edc93f41030",
+        "label": "international",
+        "description": "All international students"
+      },
+      {
+        "id": "c6345f4f-48fe-4746-9f70-eef0acacb646",
+        "label": "over-25",
+        "description": "Students who are older than 25 years old"
+      },
+      {
+        "id": "a403473b-8a18-4b09-8b6f-b309e3700fb5",
+        "label": "male",
+        "description": "Male students"
+      },
+      {
+        "id": "2ab7160d-ea5f-4f29-8d32-f933c0720bb3",
+        "label": "CS",
+        "description": "Computer Science students"
+      }
+    ],
+    "assignedTasks": []
+  },
+  {
+    "firstName": "Callie",
+    "lastName": "Padberg",
+    "email": "Rossie.Gerlach43@example.org",
+    "dob": "1999-05-05",
+    "gender": "M",
+    "nationality": "Thailand",
+    "id": "9d22eb9c-b5ef-48f1-be1c-4c0cb7bd8a22",
+    "tags": [
+      {
+        "id": "fccbeb21-3bf6-4623-ab58-4edc93f41030",
+        "label": "international",
+        "description": "All international students"
+      },
+      {
+        "id": "b823f2c3-af67-4bd7-916f-4f9b70587559",
+        "label": "under-26",
+        "description": "Students who are younger than 26 years old"
+      },
+      {
+        "id": "a403473b-8a18-4b09-8b6f-b309e3700fb5",
+        "label": "male",
+        "description": "Male students"
+      },
+      {
+        "id": "2ab7160d-ea5f-4f29-8d32-f933c0720bb3",
+        "label": "CS",
+        "description": "Computer Science students"
+      }
+    ],
+    "assignedTasks": []
+  },
+  {
+    "firstName": "Tanner",
+    "lastName": "Rippin",
+    "email": "Terrell39@example.org",
+    "dob": "1998-03-20",
+    "gender": "M",
+    "nationality": "Italy",
+    "id": "88b24976-4307-4f6d-8e74-555a0ab6984b",
+    "tags": [
+      {
+        "id": "fccbeb21-3bf6-4623-ab58-4edc93f41030",
+        "label": "international",
+        "description": "All international students"
+      },
+      {
+        "id": "b823f2c3-af67-4bd7-916f-4f9b70587559",
+        "label": "under-26",
+        "description": "Students who are younger than 26 years old"
+      },
+      {
+        "id": "a403473b-8a18-4b09-8b6f-b309e3700fb5",
+        "label": "male",
+        "description": "Male students"
+      },
+      {
+        "id": "2ab7160d-ea5f-4f29-8d32-f933c0720bb3",
+        "label": "CS",
+        "description": "Computer Science students"
+      },
+      {
+        "id": "c6cf6768-0aa7-46b0-8a1e-8aca9021d321",
+        "label": "eu-student",
+        "description": "Students from countries under the European-Union"
+      }
+    ],
+    "assignedTasks": []
+  },
+  {
+    "firstName": "Valerie",
+    "lastName": "Aufderhar",
+    "email": "Rachel.Doyle80@example.org",
+    "dob": "1994-10-08",
+    "gender": "F",
+    "nationality": "India",
+    "id": "4bfc062a-408a-4e11-9986-4d5659a158eb",
+    "tags": [
+      {
+        "id": "fccbeb21-3bf6-4623-ab58-4edc93f41030",
+        "label": "international",
+        "description": "All international students"
+      },
+      {
+        "id": "c6345f4f-48fe-4746-9f70-eef0acacb646",
+        "label": "over-25",
+        "description": "Students who are older than 25 years old"
+      },
+      {
+        "id": "8c75b499-d697-497f-a29a-b7c2ffbbfcf4",
+        "label": "female",
+        "description": "Female students"
+      },
+      {
+        "id": "2ab7160d-ea5f-4f29-8d32-f933c0720bb3",
+        "label": "CS",
+        "description": "Computer Science students"
+      }
+    ],
+    "assignedTasks": []
+  },
+  {
+    "firstName": "Joelle",
+    "lastName": "Leffler",
+    "email": "Jana.Quigley@example.com",
+    "dob": "1995-09-24",
+    "gender": "M",
+    "nationality": "Poland",
+    "id": "8b4e49ad-4bb3-413b-9a8a-257fab5fcdc7",
+    "tags": [
+      {
+        "id": "fccbeb21-3bf6-4623-ab58-4edc93f41030",
+        "label": "international",
+        "description": "All international students"
+      },
+      {
+        "id": "c6345f4f-48fe-4746-9f70-eef0acacb646",
+        "label": "over-25",
+        "description": "Students who are older than 25 years old"
+      },
+      {
+        "id": "a403473b-8a18-4b09-8b6f-b309e3700fb5",
+        "label": "male",
+        "description": "Male students"
+      },
+      {
+        "id": "2ab7160d-ea5f-4f29-8d32-f933c0720bb3",
+        "label": "CS",
+        "description": "Computer Science students"
+      },
+      {
+        "id": "c6cf6768-0aa7-46b0-8a1e-8aca9021d321",
+        "label": "eu-student",
+        "description": "Students from countries under the European-Union"
+      }
+    ],
+    "assignedTasks": []
+  },
+  {
+    "firstName": "Josiane",
+    "lastName": "Crona",
+    "email": "Frieda27@example.org",
+    "dob": "1997-07-14",
+    "gender": "F",
+    "nationality": "Cuba",
+    "id": "f86c293b-5676-45af-983e-539069326589",
+    "tags": [
+      {
+        "id": "fccbeb21-3bf6-4623-ab58-4edc93f41030",
+        "label": "international",
+        "description": "All international students"
+      },
+      {
+        "id": "b823f2c3-af67-4bd7-916f-4f9b70587559",
+        "label": "under-26",
+        "description": "Students who are younger than 26 years old"
+      },
+      {
+        "id": "8c75b499-d697-497f-a29a-b7c2ffbbfcf4",
+        "label": "female",
+        "description": "Female students"
+      },
+      {
+        "id": "2ab7160d-ea5f-4f29-8d32-f933c0720bb3",
+        "label": "CS",
+        "description": "Computer Science students"
+      }
+    ],
+    "assignedTasks": []
+  },
+  {
+    "firstName": "Melba",
+    "lastName": "Hessel",
+    "email": "Uriah.Klein@example.org",
+    "dob": "1998-01-21",
+    "gender": "F",
+    "nationality": "Mali",
+    "id": "7140c8a5-a97e-4589-a73b-53841c49027e",
+    "tags": [
+      {
+        "id": "fccbeb21-3bf6-4623-ab58-4edc93f41030",
+        "label": "international",
+        "description": "All international students"
+      },
+      {
+        "id": "b823f2c3-af67-4bd7-916f-4f9b70587559",
+        "label": "under-26",
+        "description": "Students who are younger than 26 years old"
+      },
+      {
+        "id": "8c75b499-d697-497f-a29a-b7c2ffbbfcf4",
+        "label": "female",
+        "description": "Female students"
+      },
+      {
+        "id": "2ab7160d-ea5f-4f29-8d32-f933c0720bb3",
+        "label": "CS",
+        "description": "Computer Science students"
+      }
+    ],
+    "assignedTasks": []
+  },
+  {
+    "firstName": "Dayna",
+    "lastName": "Friesen",
+    "email": "Shanna31@example.net",
+    "dob": "1999-03-09",
+    "gender": "F",
+    "nationality": "Malaysia",
+    "id": "99677da0-b62f-406e-9565-efdea31e839d",
+    "tags": [
+      {
+        "id": "fccbeb21-3bf6-4623-ab58-4edc93f41030",
+        "label": "international",
+        "description": "All international students"
+      },
+      {
+        "id": "b823f2c3-af67-4bd7-916f-4f9b70587559",
+        "label": "under-26",
+        "description": "Students who are younger than 26 years old"
+      },
+      {
+        "id": "8c75b499-d697-497f-a29a-b7c2ffbbfcf4",
+        "label": "female",
+        "description": "Female students"
+      },
+      {
+        "id": "2ab7160d-ea5f-4f29-8d32-f933c0720bb3",
+        "label": "CS",
+        "description": "Computer Science students"
+      }
+    ],
+    "assignedTasks": []
+  },
+  {
+    "firstName": "Vidal",
+    "lastName": "Rodriguez",
+    "email": "Elna60@example.net",
+    "dob": "1998-09-02",
+    "gender": "M",
+    "nationality": "Canada",
+    "id": "4fc30669-d11d-4abe-8fa5-a20acaaa05c0",
+    "tags": [
+      {
+        "id": "fccbeb21-3bf6-4623-ab58-4edc93f41030",
+        "label": "international",
+        "description": "All international students"
+      },
+      {
+        "id": "b823f2c3-af67-4bd7-916f-4f9b70587559",
+        "label": "under-26",
+        "description": "Students who are younger than 26 years old"
+      },
+      {
+        "id": "a403473b-8a18-4b09-8b6f-b309e3700fb5",
+        "label": "male",
+        "description": "Male students"
+      },
+      {
+        "id": "2ab7160d-ea5f-4f29-8d32-f933c0720bb3",
+        "label": "CS",
+        "description": "Computer Science students"
+      }
+    ],
+    "assignedTasks": []
+  },
+  {
+    "firstName": "Citlalli",
+    "lastName": "Jacobson",
+    "email": "Haven73@example.com",
+    "dob": "1996-10-31",
+    "gender": "M",
+    "nationality": "Congo",
+    "id": "11e8c5da-3a0a-4b79-9de1-019a5c8c0110",
+    "tags": [
+      {
+        "id": "fccbeb21-3bf6-4623-ab58-4edc93f41030",
+        "label": "international",
+        "description": "All international students"
+      },
+      {
+        "id": "c6345f4f-48fe-4746-9f70-eef0acacb646",
+        "label": "over-25",
+        "description": "Students who are older than 25 years old"
+      },
+      {
+        "id": "a403473b-8a18-4b09-8b6f-b309e3700fb5",
+        "label": "male",
+        "description": "Male students"
+      },
+      {
+        "id": "2ab7160d-ea5f-4f29-8d32-f933c0720bb3",
+        "label": "CS",
+        "description": "Computer Science students"
+      }
+    ],
+    "assignedTasks": []
+  },
+  {
+    "firstName": "Kristopher",
+    "lastName": "Wilderman",
+    "email": "Deontae_Nader55@example.net",
+    "dob": "1990-12-01",
+    "gender": "M",
+    "nationality": "Chad",
+    "id": "1e53ee14-4882-469d-afa5-978f15d086f0",
+    "tags": [
+      {
+        "id": "fccbeb21-3bf6-4623-ab58-4edc93f41030",
+        "label": "international",
+        "description": "All international students"
+      },
+      {
+        "id": "c6345f4f-48fe-4746-9f70-eef0acacb646",
+        "label": "over-25",
+        "description": "Students who are older than 25 years old"
+      },
+      {
+        "id": "a403473b-8a18-4b09-8b6f-b309e3700fb5",
+        "label": "male",
+        "description": "Male students"
+      },
+      {
+        "id": "2ab7160d-ea5f-4f29-8d32-f933c0720bb3",
+        "label": "CS",
+        "description": "Computer Science students"
+      }
+    ],
+    "assignedTasks": []
+  },
+  {
+    "firstName": "Vanessa",
+    "lastName": "Hagenes",
+    "email": "Virgie_Simonis17@example.org",
+    "dob": "2000-05-20",
+    "gender": "F",
+    "nationality": "Sri Lanka",
+    "id": "b955c227-b37d-4a9e-8ea1-495b1dcaff4d",
+    "tags": [
+      {
+        "id": "fccbeb21-3bf6-4623-ab58-4edc93f41030",
+        "label": "international",
+        "description": "All international students"
+      },
+      {
+        "id": "b823f2c3-af67-4bd7-916f-4f9b70587559",
+        "label": "under-26",
+        "description": "Students who are younger than 26 years old"
+      },
+      {
+        "id": "8c75b499-d697-497f-a29a-b7c2ffbbfcf4",
+        "label": "female",
+        "description": "Female students"
+      },
+      {
+        "id": "2ab7160d-ea5f-4f29-8d32-f933c0720bb3",
+        "label": "CS",
+        "description": "Computer Science students"
+      }
+    ],
+    "assignedTasks": []
+  },
+  {
+    "firstName": "Susan",
+    "lastName": "Nolan",
+    "email": "Andres.Terry@example.org",
+    "dob": "1998-03-13",
+    "gender": "F",
+    "nationality": "Tanzania",
+    "id": "6dd24830-384f-49aa-b26a-0bb06ccd8c20",
+    "tags": [
+      {
+        "id": "fccbeb21-3bf6-4623-ab58-4edc93f41030",
+        "label": "international",
+        "description": "All international students"
+      },
+      {
+        "id": "b823f2c3-af67-4bd7-916f-4f9b70587559",
+        "label": "under-26",
+        "description": "Students who are younger than 26 years old"
+      },
+      {
+        "id": "8c75b499-d697-497f-a29a-b7c2ffbbfcf4",
+        "label": "female",
+        "description": "Female students"
+      },
+      {
+        "id": "2ab7160d-ea5f-4f29-8d32-f933c0720bb3",
+        "label": "CS",
+        "description": "Computer Science students"
+      }
+    ],
+    "assignedTasks": []
+  },
+  {
+    "firstName": "Earline",
+    "lastName": "Borer",
+    "email": "Norberto52@example.net",
+    "dob": "1994-06-27",
+    "gender": "F",
+    "nationality": "Dominican Republic",
+    "id": "f0a6752b-2940-47d0-9ff0-ebef96113203",
+    "tags": [
+      {
+        "id": "fccbeb21-3bf6-4623-ab58-4edc93f41030",
+        "label": "international",
+        "description": "All international students"
+      },
+      {
+        "id": "c6345f4f-48fe-4746-9f70-eef0acacb646",
+        "label": "over-25",
+        "description": "Students who are older than 25 years old"
+      },
+      {
+        "id": "8c75b499-d697-497f-a29a-b7c2ffbbfcf4",
+        "label": "female",
+        "description": "Female students"
+      },
+      {
+        "id": "2ab7160d-ea5f-4f29-8d32-f933c0720bb3",
+        "label": "CS",
+        "description": "Computer Science students"
+      }
+    ],
+    "assignedTasks": []
+  },
+  {
+    "firstName": "Juliana",
+    "lastName": "Marks",
+    "email": "Howell_Torphy@example.org",
+    "dob": "1998-01-07",
+    "gender": "F",
+    "nationality": "Canada",
+    "id": "2302f4eb-bdbc-4f16-9fa9-badb64bb29a7",
+    "tags": [
+      {
+        "id": "fccbeb21-3bf6-4623-ab58-4edc93f41030",
+        "label": "international",
+        "description": "All international students"
+      },
+      {
+        "id": "b823f2c3-af67-4bd7-916f-4f9b70587559",
+        "label": "under-26",
+        "description": "Students who are younger than 26 years old"
+      },
+      {
+        "id": "8c75b499-d697-497f-a29a-b7c2ffbbfcf4",
+        "label": "female",
+        "description": "Female students"
+      },
+      {
+        "id": "2ab7160d-ea5f-4f29-8d32-f933c0720bb3",
+        "label": "CS",
+        "description": "Computer Science students"
+      }
+    ],
+    "assignedTasks": []
+  },
+  {
+    "firstName": "Manley",
+    "lastName": "Morissette",
+    "email": "Shad_Koelpin@example.org",
+    "dob": "1997-07-07",
+    "gender": "F",
+    "nationality": "France",
+    "id": "3a8107ed-61d0-4985-96bb-a5bee7ecbf58",
+    "tags": [
+      {
+        "id": "b823f2c3-af67-4bd7-916f-4f9b70587559",
+        "label": "under-26",
+        "description": "Students who are younger than 26 years old"
+      },
+      {
+        "id": "8c75b499-d697-497f-a29a-b7c2ffbbfcf4",
+        "label": "female",
+        "description": "Female students"
+      },
+      {
+        "id": "2ab7160d-ea5f-4f29-8d32-f933c0720bb3",
+        "label": "CS",
+        "description": "Computer Science students"
+      },
+      {
+        "id": "c6cf6768-0aa7-46b0-8a1e-8aca9021d321",
+        "label": "eu-student",
+        "description": "Students from countries under the European-Union"
+      }
+    ],
+    "assignedTasks": []
+  },
+  {
+    "firstName": "Jessy",
+    "lastName": "Schuster",
+    "email": "Marjory_Pollich@example.org",
+    "dob": "1999-11-17",
+    "gender": "M",
+    "nationality": "Romania",
+    "id": "60d534f3-1d63-4182-a796-a6328e53051b",
+    "tags": [
+      {
+        "id": "fccbeb21-3bf6-4623-ab58-4edc93f41030",
+        "label": "international",
+        "description": "All international students"
+      },
+      {
+        "id": "b823f2c3-af67-4bd7-916f-4f9b70587559",
+        "label": "under-26",
+        "description": "Students who are younger than 26 years old"
+      },
+      {
+        "id": "a403473b-8a18-4b09-8b6f-b309e3700fb5",
+        "label": "male",
+        "description": "Male students"
+      },
+      {
+        "id": "2ab7160d-ea5f-4f29-8d32-f933c0720bb3",
+        "label": "CS",
+        "description": "Computer Science students"
+      },
+      {
+        "id": "895e689d-1dd5-4380-ad66-0d39dad83e63",
+        "label": "Romania",
+        "description": "Students from Romania"
+      },
+      {
+        "id": "c6cf6768-0aa7-46b0-8a1e-8aca9021d321",
+        "label": "eu-student",
+        "description": "Students from countries under the European-Union"
+      }
+    ],
+    "assignedTasks": []
+  }
+]

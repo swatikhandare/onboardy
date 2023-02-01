@@ -1,0 +1,52 @@
+[
+  {
+    "id": "bbf63bc4-af58-4659-beb2-8eee6663bc02",
+    "question": "What documents do I need to submit to complete my enrollment?",
+    "answer": "You will need to submit proof of your identity, such as a government-issued ID or passport, as well as your high school diploma or equivalent. You may also need to submit transcripts from any previous institutions you have attended."
+  },
+  {
+    "id": "ddd720b1-ea2c-4e6d-bb76-e3ac77bbcdf5",
+    "question": "How do I register for classes?",
+    "answer": "You will need to access the online registration system through the university's website. You will be prompted to create an account and select your classes based on your program and available schedules."
+  },
+  {
+    "id": "f38c685f-3313-4486-afa5-cb5af9198165",
+    "question": "How do I pay my tuition?",
+    "answer": "Tuition can typically be paid online via the university's website, or in person at the bursar's office. You may also be able to set up a payment plan or apply for financial aid."
+  },
+  {
+    "id": "f668a772-d39f-4e4c-ba53-bcd9a9a4ffe4",
+    "question": "How do I get my student ID card?",
+    "answer": "You can typically get your student ID card by visiting the campus bookstore or the student ID office. You may need to provide proof of your enrollment and a photo ID to get your card."
+  },
+  {
+    "id": "cc73303e-974a-4cdf-806c-f38a7ef9a303",
+    "question": "How do I access my email and other online resources?",
+    "answer": "You will be provided with a student email address and login credentials for the university's online portal. You will use these credentials to access your email, course materials, and other resources."
+  },
+  {
+    "id": "2cd9fe11-b926-4944-a0db-1bbbc6afa932",
+    "question": "What services does the university offer for students with disabilities?",
+    "answer": "The university will have a dedicated office for students with disabilities that provides accommodations and support services, such as sign language interpretation, note-taking, and assistive technology."
+  },
+  {
+    "id": "f3b10ac9-cee2-4bdc-a346-5e68cbf00b89",
+    "question": "How do I find on-campus housing?",
+    "answer": "You can find information on on-campus housing options through the university's housing office. You will need to submit a housing application and deposit to secure a spot."
+  },
+  {
+    "id": "592ad27a-bc01-488e-b3d0-a0a093f80fb8",
+    "question": "How do I get involved in extracurricular activities?",
+    "answer": "You can find information on extracurricular activities through the university's student activities office or by visiting the student organizations fair. You can also check the university's website for a list of clubs and organizations."
+  },
+  {
+    "id": "52036d64-bb3a-4b6a-8a15-21024bbb944e",
+    "question": "How do I get around campus?",
+    "answer": "The university will have a map of the campus available online and in print, which you can use to navigate the campus. Many universities also have a shuttle service, bike-sharing program or other transportation options for students."
+  },
+  {
+    "id": "6db0f651-2c39-4aaa-8033-e930a5f54509",
+    "question": "How can I get help if I am struggling academically?",
+    "answer": "The university will have a variety of resources available to help you succeed academically. You can visit your professors during office hours, meet with tutors, attend study groups, and seek out support from academic advisors and counseling services."
+  }
+]
