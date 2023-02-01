@@ -1,0 +1,11 @@
+Action Learning Project: OnBoardy
+
+Commands:
+
+1) Client side:
+  npm install
+  npm run dev
+
+2) Server side:
+  npm install
+  npm start
