@@ -24,8 +24,8 @@ const useBlogsStore = create<BlogState>((set, get) => ({
     await updateBlog(updatedBlog);
     get().getBlogs();
   },
-  removeBlog: async (id) => {
-    await deleteBlog(id);
+  removeBlog: async (_id) => {
+    await deleteBlog(_id);
     get().getBlogs();
   },
 }))

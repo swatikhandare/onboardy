@@ -1,4 +1,4 @@
-import React from 'react'
+import { useEffect, useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 import Typography from './Typography'
@@ -8,6 +8,10 @@ import FAQsIcon from './../assets/faqs.icon'
 import StudentIcon from './../assets/student.icon'
 import TagIcon from '../assets/tag.icon'
 import BlogIcon from '../assets/blog.icon'
+import { useUserStore } from '../stores'
+import { getResourceFromLocalStorage } from '../APIs/localStorageHelpers'
+import { generateStockImage } from '../helpers'
+import MessageIcon from '../assets/message.icon'
 
 const StyledNavBar = styled.div`
   background: white;
@@ -65,20 +69,55 @@ const StyledNavBar = styled.div`
   }
 `
 
-const navLinks = [
+const studentNavLinks = [
   { label: "Introduction", path: "introduction", icon: IntroIcon },
   { label: "Assigned Tasks", path: "assigned-tasks", icon: TasksIcon },
   { label: "FAQs", path: "faqs", icon: FAQsIcon },
+]
+
+
+const staffNavLinks = [
+  { label: "Latest Updates", path: "latest", icon: MessageIcon },
   { label: "Students", path: "students", icon: StudentIcon },
   { label: "FAQs Manager", path: "faqs-manager", icon: FAQsIcon },
   { label: "Tags Manager", path: "tags-manager", icon: TagIcon },
   { label: "Tasks Manager", path: "tasks", icon: TasksIcon },
   { label: "Blogs", path: "blogs", icon: BlogIcon },
-
 ]
 
+const staffMember = {
+  id: "123",
+  firstName: "John",
+  lastName: "Smith",
+  email: "alexa.bob@epita.fr",
+  type: "staff"
+}
+
 const NavigationBar = () => {
-  const location = useLocation()
+  const location = useLocation();
+  const navigate = useNavigate();
+  const [navLinks, setNavLinks] = useState<any>([]);
+  const students = getResourceFromLocalStorage("students") as any;
+
+  const user = useUserStore((state) => state.user);
+  const setUser = useUserStore((state) => state.setUser);
+
+  useEffect(() => {
+    setUser({...students[1], student: students[1],type: "student"})
+  }, []);
+
+  useEffect(() => {
+    setNavLinks(user?.type === "staff" ? staffNavLinks : studentNavLinks || [])
+  }, [user])
+
+  const handleProfileSwitch = () => {
+    if (user?.type === "student") {
+      setUser(staffMember)
+    } else {
+      setUser({...students[1], type: "student"});
+      navigate("/introduction");
+    }
+  }
 
   return (
     <StyledNavBar>
@@ -87,7 +126,7 @@ const NavigationBar = () => {
           <Typography size={32} weight={"600"}>OnBoardy</Typography>
         </div>
         <ul className='nav-links'>
-          {navLinks.map((nav, idx) => (
+          {navLinks.map((nav: any, idx: number) => (
             <Link key={nav.label} to={nav.path}>
               <li className={location.pathname.includes(nav.path) ? 'active' : ''} key={idx}>
                 <><nav.icon /> <Typography size={16} weight="600">{nav.label}</Typography></>
@@ -96,9 +135,9 @@ const NavigationBar = () => {
           ))}
         </ul>
       </div>
-      <div className='profile-details'>
-        <img src="https://via.placeholder.com/50/cccccc/000000?text=JS" alt="profile" />
-        <Typography size={16} weight="600">John Smith</Typography>
+      <div className='profile-details' onClick={handleProfileSwitch} style={{ cursor: "pointer" }}>
+        <img src={generateStockImage(user?.firstName || "", user?.lastName || "")} alt="profile" />
+        <Typography size={16} weight="600">{user?.firstName} {user?.lastName}</Typography>
       </div>
     </StyledNavBar>
   )

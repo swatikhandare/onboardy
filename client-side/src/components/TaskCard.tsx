@@ -1,15 +1,45 @@
-import React from 'react'
-import Card from './Card'
-import Typography from './Typography'
+import React from "react";
+import AssignedTask from "../models/AssignedTask";
+import Task from "../models/Task";
+import Card from "./Card";
+import Typography from "./Typography";
 
-const TaskCard = ({ task, min, onClick }: { task: any, min?: boolean, onClick: () => void }) => {
-  return (
-    <Card className="task" onClick={onClick} style={{ cursor: "pointer"}}>
-      <Typography size={16} weight="600" styles={{ marginBottom: "14px"}}>{task.title}</Typography>
-      {!min && <p style={{ color: "var(--text-secondary)",whiteSpace: "nowrap", overflow: 'hidden', textOverflow: 'ellipsis' }}>{task.description}</p>}
-      {/* {Boolean(task.tags.length) && <p><b>Tags:</b> {task.tags.join(', ')}</p>} */}
-    </Card>
-  )
+interface TaskCardProps {
+  assignedTask: AssignedTask;
+  onClick: () => void;
 }
 
-export default TaskCard
+const TaskCard: React.FunctionComponent<TaskCardProps> = ({
+  assignedTask,
+  onClick,
+}) => {
+  return (
+    <Card className="task" onClick={onClick} style={{ cursor: "pointer", maxWidth: "100%", filter: assignedTask.isDone ? "grayscale(1)" : undefined }}>
+      {assignedTask.task.isUrgent &&  <Typography color="var(--danger-color)" size={14} weight="600" styles={{ float: "right"}}>Urgent Task!</Typography>}
+      <Typography
+        size={18}
+        weight="600"
+        styles={{
+          marginBottom: "4px",
+          textDecoration: assignedTask.isDone ? "line-through" : undefined,
+        }}
+      >
+        {assignedTask.task.title}
+      </Typography>
+      <Typography color="#54577A" size={12} weight="400" styles={{ marginBottom: "14px" }}>Due on: {assignedTask.task.dueDate}</Typography>
+      <Typography
+        weight="500"
+        styles={{
+          color: "#8E92BC",
+          whiteSpace: "nowrap",
+          overflow: "hidden",
+          textOverflow: "ellipsis",
+        }}
+      >
+        {assignedTask.task.description}
+      </Typography>
+    </Card>
+  );
+};
+
+export default TaskCard;

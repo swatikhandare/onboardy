@@ -173,7 +173,7 @@ const BlogsPreview: React.FunctionComponent<{ selectedBlog: Blog | null, onSave:
     const isConfirmed = confirm(`Are you sure you want to remove the following blog: \n\n "${blog.title}"`);
     if(!isConfirmed) return
 
-    onRemove(blog.id);
+    onRemove(blog._id || "");
   }
 
   return (

@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Typography from './Typography'
 
 const StyledProgressBar = styled.div<{percent: number}>`
+  margin-bottom: 32px;
 
   .progress-label {
     display: flex; 
@@ -53,7 +54,7 @@ const ProgressBar: React.FunctionComponent<ProgressBarProps> = ({label, value, c
   const progress = value > 100 ? 100 : value
   return (
     <StyledProgressBar percent={progress} className={className}>
-      {label && <Typography size={14} className='progress-label'>
+      {label && <Typography size={14} weight="600" className='progress-label'>
         <span>{label}</span> <span style={{color: "var(--primary-color)"}}>{progress}%</span>
       </Typography>}
       <div className='progress-rail' />

@@ -4,21 +4,3 @@
   height: 100vh;
   gap: 0;
 }
-
-.container {
-  display: flex;
-  gap: 32px;
-  flex-wrap: wrap;
-}
-
-.students .container > * {
-  max-width: calc(25% - 16px);
-}
-
-.tasks .container > * {
-  max-width: calc(25% - 24px);
-}
-
-.tab {
-  cursor: pointer;
-}

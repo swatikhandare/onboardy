@@ -8,9 +8,8 @@ interface StudentState {
   addStudent: (student: Student) => void
   editStudent: (updatedStudent: Student) => void
   removeStudent: (id: string) => void
+  getStudentById: (id: string) => Student | null
 }
-
-// const _defaultStudents = (defaultStudents as any).map((student) => ({...student, tasksCompletion: Math.floor(Math.random() * 100)}))
 
 const useStudentsStore = create<StudentState>((set, get) => ({
   students: [],
@@ -30,6 +29,11 @@ const useStudentsStore = create<StudentState>((set, get) => ({
   removeStudent: async (id) => {
     await deleteStudent(id);
     get().getStudents();
+  },
+  getStudentById: (id) => {
+    const matchedStudent = get().students.find((student) => student.id === id);
+    if (!matchedStudent) return null;
+    return matchedStudent;
   },
 }))
 

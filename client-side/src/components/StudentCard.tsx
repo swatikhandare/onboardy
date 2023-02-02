@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { generateStockImage } from '../helpers'
 import Tasks from '../pages/Tasks'
 import Card from './Card'
 import ProgressBar from './ProgressBar'
@@ -36,7 +37,7 @@ const StudentCard: React.FunctionComponent<StudentCardProps> = ({ student, onCli
   return (
     <StyledStudentCard onClick={onClick}>
       <div className='student-details'>
-        <img src={`https://via.placeholder.com/50/cccccc/000000?text=${student.firstName.slice(0,1)}${student.lastName.slice(0,1)}`} />
+        <img src={generateStockImage(student.firstName, student.lastName)} />
         <div>
           <Typography size={18} weight="600">{student.firstName} {student.lastName}</Typography>
           <Typography>{student.email}</Typography>

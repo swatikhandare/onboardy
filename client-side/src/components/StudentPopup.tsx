@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import AssignedTask from '../models/AssignedTask'
 import Student from '../models/Student'
 import ITag from '../models/Tag'
@@ -8,19 +8,22 @@ import PopupMenu from './PopupMenu'
 import SearchTags from './SearchTags'
 import Tag from './Tag'
 import TaskCard from './TaskCard'
-import TaskPopup from './TaskPopup'
 import Typography from './Typography'
 
 interface StudentPopup {
   student: Student
   onClose: () => void
   onStudentDelete: (id: string) => void
+  onAssignedTaskSelect: (assignedTask: AssignedTask) => void
 }
 
-const StudentPopup: React.FunctionComponent<StudentPopup> = ({ student, onStudentDelete, onClose }) => {
+const StudentPopup: React.FunctionComponent<StudentPopup> = ({ student, onStudentDelete, onClose, onAssignedTaskSelect }) => {
   const [isEditing, setEditing] = useState(false);
   const [studentDetails, setStudentDetails] = useState(student)
-  const [selectedAssignedTask, setSelectedAssignedTask] = useState<AssignedTask | null>(null)
+  
+  useEffect(() => {
+    setStudentDetails(student)
+  }, [student])
 
   const handleTagsAdd = (tag: ITag) => {
     if (studentDetails.tags.includes(tag)) return
@@ -37,6 +40,9 @@ const StudentPopup: React.FunctionComponent<StudentPopup> = ({ student, onStuden
     onStudentDelete(studentDetails.id);
     onClose();
   }
+
+  const unDoneTasks = studentDetails?.assignedTasks?.filter(aTask => !aTask.isDone) || [];
+  const doneTasks = studentDetails?.assignedTasks?.filter(aTask => aTask.isDone) || [];
 
   return (
     <PopupMenu onClose={onClose}>
@@ -67,11 +73,26 @@ const StudentPopup: React.FunctionComponent<StudentPopup> = ({ student, onStuden
       </div>
 
       <Typography size={16} weight="600" styles={{ marginBottom: "8px" }}>Assigned Tasks</Typography>
-      <div style={{ background: "#f5f5f5", display: "flex", padding: "24px", borderRadius: "10px", gap: "24px", flexWrap: "wrap" }}>
-        {student.assignedTasks?.map(aTask => (
-          <TaskCard task={aTask.task} onClick={() => setSelectedAssignedTask(aTask)} />
-        ))}
-      </div>
+      {!isEditing && (
+        <div style={{ background: "#f5f5f5", padding: "24px", borderRadius: "10px" }}>
+          <div>
+            <Typography size={16} weight="600" styles={{ marginBottom: "16px"}}>Due tasks: {unDoneTasks.length}</Typography>
+            <div style={{ marginBottom: "16px", display: "flex", gap: "24px", flexWrap: "wrap"}}>
+              {unDoneTasks.map((aTask) => (
+                <TaskCard assignedTask={aTask} key={aTask.id} onClick={() => onAssignedTaskSelect(aTask)} />
+              ))}
+            </div>
+          </div>
+          <div>
+            <Typography size={16} weight="600" styles={{ marginBottom: "16px"}}>Done tasks: {doneTasks.length}</Typography>
+            <div style={{ display: "flex", gap: "24px", flexWrap: "wrap" }}>
+            {doneTasks.map((aTask) => (
+                <TaskCard assignedTask={aTask} key={aTask.id} onClick={() => onAssignedTaskSelect(aTask)} />
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
 
       <div style={{ marginTop: "15px", display: "flex", justifyContent: "space-between" }}>
         <Button onClick={handleStudentDelete} color="var(--danger-color)">Delete</Button>
@@ -80,8 +101,6 @@ const StudentPopup: React.FunctionComponent<StudentPopup> = ({ student, onStuden
           <Button onClick={onClose}>Close</Button>
         </div>
       </div>
-
-      {selectedAssignedTask && <TaskPopup assignedTask={selectedAssignedTask} onTaskStatusChange={() => {}}/>}
     </PopupMenu>
   )
 }

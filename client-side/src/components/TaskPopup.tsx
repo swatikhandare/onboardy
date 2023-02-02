@@ -1,5 +1,6 @@
 import React from "react";
 import AssignedTask from "../models/AssignedTask";
+import Message from "../models/Message";
 import Button from "./Button";
 import ChatBox from "./ChatBox";
 import PopupMenu from "./PopupMenu";
@@ -8,21 +9,22 @@ import Typography from "./Typography";
 const TaskPopup: React.FunctionComponent<{
   assignedTask: AssignedTask;
   onClose?: () => void;
-  onTaskStatusChange: (isDone: boolean) => void;
-}> = ({ assignedTask, onClose, onTaskStatusChange }) => {
+  onAssignedTaskChange: (change: any) => void;
+  staticMode?: boolean
+}> = ({ assignedTask, onClose, onAssignedTaskChange, staticMode = false }) => {
   return (
-    <PopupMenu onClose={onClose}>
+    <PopupMenu onClose={onClose} style={{ minHeight: "80%"}} staticMode={staticMode}>
       <div style={{ float: "right" }}>
         {assignedTask.isDone ? (
           <Button
             color="var(--danger-color)"
             minimal
-            onClick={() => onTaskStatusChange(false)}
+            onClick={() => onAssignedTaskChange({ isDone: false })}
           >
             Mark as undone
           </Button>
         ) : (
-          <Button minimal onClick={() => onTaskStatusChange(true)}>
+          <Button minimal onClick={() => onAssignedTaskChange({ isDone: true })}>
             Mark as done
           </Button>
         )}
@@ -40,7 +42,7 @@ const TaskPopup: React.FunctionComponent<{
       <Typography size={16} weight="600" styles={{ marginBottom: "8px" }}>
         Discussion
       </Typography>
-      <ChatBox />
+      <ChatBox assignedTask={assignedTask} onMessageSend={onAssignedTaskChange} />
     </PopupMenu>
   );
 };

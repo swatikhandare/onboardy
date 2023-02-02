@@ -1,19 +1,21 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
-const StyledPopupMenu = styled.div`
-  position: fixed;
-  min-height: 250px;
-  max-height: 80%;
-  width: 50%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 10px;
-  padding: 32px;
-  background: white;
-  z-index: 3;
-  overflow: overlay;
+const StyledPopupMenu = styled.div<{ staticMode?: boolean }>`
+  ${({staticMode}) => staticMode ? '' : css`
+    position: fixed;
+    min-height: 250px;
+    max-height: 80%;
+    width: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    padding: 32px;
+    background: white;
+    z-index: 3;
+    overflow: overlay;
+  `}
 `
 
 const StyledPopupMenuBlocker = styled.div`
@@ -29,15 +31,17 @@ const StyledPopupMenuBlocker = styled.div`
 interface PopupMenuProps {
   children: React.ReactNode,
   onClose?: () => void
+  style?: React.CSSProperties
+  staticMode?: boolean
 }
 
-const PopupMenu: React.FunctionComponent<PopupMenuProps> = ({ children, onClose }) => {
+const PopupMenu: React.FunctionComponent<PopupMenuProps> = ({ children, onClose, style, staticMode }) => {
   return (
     <>
-      <StyledPopupMenu>
+      <StyledPopupMenu style={style} staticMode={staticMode} >
         {children}
       </StyledPopupMenu>
-      <StyledPopupMenuBlocker onClick={onClose} />
+      {!staticMode && <StyledPopupMenuBlocker onClick={onClose} />}
     </>
   )
 }

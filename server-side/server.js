@@ -11,10 +11,12 @@ const studentRoutes = require('./routes/routesStudent.js')
 const assignedTaskRoutes = require('./routes/routesAssignedTask.js')
 const faqroutes = require('./routes/routesFaq.js')
 const messageRoutes = require('./routes/routesMessage.js')
-
+const cors = require('cors')
 
 // express app
 const app = express()
+
+app.use(cors());
 
 // middleware
 app.use(express.json())
@@ -23,6 +25,7 @@ app.use((req, res, next) => {
   console.log(req.path, req.method)
   next()
 })
+
 
 // routes
 app.use('/api/', blogsRoutes)
