@@ -79,7 +79,7 @@ const FAQManager: React.FunctionComponent = () => {
   const handleFaqRemove = (targetFaq: FAQ) => {
     const isConfirmed = confirm(`Are you sure you want to delete the following question? \n\n"${targetFaq.question}"`)
     if (!isConfirmed) return
-    removeFAQ(targetFaq.id)
+    removeFAQ(targetFaq._id)
   }
   
   const handleFaqEdit = (editedTag: FAQ) => {
@@ -124,13 +124,14 @@ const FAQManager: React.FunctionComponent = () => {
   )
 }
 
-const EditFaqPopup = ({onComplete, onClose, faq}: any) => {
+const EditFaqPopup = ({onComplete, onClose, faq = {}}: any) => {
   const labelRef = useRef<any>(null);
   const descriptionRef = useRef<any>(null);
 
   const handleComplete = () => {
     if (!labelRef.current.value) return;
     onComplete({
+      ...faq,
       id: faq?.id || crypto.randomUUID(),
       question: labelRef.current.value,
       answer: descriptionRef.current.value

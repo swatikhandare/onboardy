@@ -2,6 +2,7 @@ import AssignedTask from "./AssignedTask"
 import Tag from "./Tag"
 
 interface Student {
+  _id: string
   id: string
   firstName: string
   lastName: string

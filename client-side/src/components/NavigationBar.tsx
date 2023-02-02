@@ -8,7 +8,7 @@ import FAQsIcon from './../assets/faqs.icon'
 import StudentIcon from './../assets/student.icon'
 import TagIcon from '../assets/tag.icon'
 import BlogIcon from '../assets/blog.icon'
-import { useUserStore } from '../stores'
+import { useStudentsStore, useUserStore } from '../stores'
 import { getResourceFromLocalStorage } from '../APIs/localStorageHelpers'
 import { generateStockImage } from '../helpers'
 import MessageIcon from '../assets/message.icon'
@@ -97,14 +97,21 @@ const NavigationBar = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [navLinks, setNavLinks] = useState<any>([]);
-  const students = getResourceFromLocalStorage("students") as any;
+  const getStudents = useStudentsStore((state) => state.getStudents);
+  const students = useStudentsStore((state) => state.students);
+
+  useEffect(() => {
+    getStudents()
+  }, [])
 
   const user = useUserStore((state) => state.user);
   const setUser = useUserStore((state) => state.setUser);
 
   useEffect(() => {
+    console.log(user)
+    if (user?.student) return
     setUser({...students[1], student: students[1],type: "student"})
-  }, []);
+  }, [students]);
 
   useEffect(() => {
     setNavLinks(user?.type === "staff" ? staffNavLinks : studentNavLinks || [])

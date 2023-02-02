@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import AssignedTask from '../models/AssignedTask'
 import Student from '../models/Student'
 import ITag from '../models/Tag'
+import { useStudentsStore } from '../stores'
 import Button from './Button'
 import Input from './Input'
 import PopupMenu from './PopupMenu'
@@ -18,6 +19,7 @@ interface StudentPopup {
 }
 
 const StudentPopup: React.FunctionComponent<StudentPopup> = ({ student, onStudentDelete, onClose, onAssignedTaskSelect }) => {
+  const editStudent = useStudentsStore((state) => state.editStudent);
   const [isEditing, setEditing] = useState(false);
   const [studentDetails, setStudentDetails] = useState(student)
   
@@ -37,8 +39,13 @@ const StudentPopup: React.FunctionComponent<StudentPopup> = ({ student, onStuden
   const handleStudentDelete = () => {
     const isConfirmed = confirm(`Are you sure you want to delete the following Student:\n\n"${student.firstName} ${student.lastName}"`);
     if (!isConfirmed) return;
-    onStudentDelete(studentDetails.id);
+    onStudentDelete(studentDetails._id);
     onClose();
+  }
+
+  const handleStudentChange = () => {
+    editStudent(studentDetails);
+    setEditing(false);
   }
 
   const unDoneTasks = studentDetails?.assignedTasks?.filter(aTask => !aTask.isDone) || [];
@@ -97,7 +104,7 @@ const StudentPopup: React.FunctionComponent<StudentPopup> = ({ student, onStuden
       <div style={{ marginTop: "15px", display: "flex", justifyContent: "space-between" }}>
         <Button onClick={handleStudentDelete} color="var(--danger-color)">Delete</Button>
         <div style={{ display: "flex", gap: "10px"}}>
-          <Button onClick={() => setEditing(!isEditing)}>{isEditing ? "Save" : "Edit"}</Button>
+          <Button onClick={isEditing ? handleStudentChange : () => setEditing(true)}>{isEditing ? "Save" : "Edit"}</Button>
           <Button onClick={onClose}>Close</Button>
         </div>
       </div>

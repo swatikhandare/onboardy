@@ -2,11 +2,9 @@ import Blog from "../models/Blog"
 import { getResourceFromLocalStorage, setResourceAtLocalStorage } from "./localStorageHelpers";
 
 const fetchBlogs = async (): Promise<any> => {
-  // return getResourceFromLocalStorage<Blog[]>("blogs")
   const blogsRes = await fetch('http://localhost:4000/api/blogs') as any;
-  const blogs = await blogsRes.json()
-  const res = blogs.map((blog: any) => ({...blog, id: blog._id}))
-  return res
+  return await blogsRes.json();
+  // return getResourceFromLocalStorage<Blog[]>("blogs")
 }
 
 const createBlog = async (blog: Blog)  => {

@@ -93,15 +93,15 @@ const TagsManager = () => {
   const [editing, setEditing] = useState<ITag | null>(null)
   const [searchQuery, setSearchQuery] = useState('');
 
-  const handleTaskCreate = async (newTag: ITag) => {
+  const handleTagCreate = async (newTag: ITag) => {
     await addTag(newTag);
   }
 
-  const handleTaskRemove = async (targetTag: ITag) => 
+  const handleTagRemove = async (targetTag: ITag) => 
   {
     const isConfirmed = confirm(`Are you sure you want to delete the following tag? \n\n"${targetTag.label}"`)
     if (!isConfirmed) return
-    await removeTag(targetTag.id);
+    await removeTag(targetTag._id);
   }
   
   const handleTagEdit = async (editedTag: ITag) => {
@@ -132,7 +132,7 @@ const TagsManager = () => {
                     <td>
                       <div>
                         <Button minimal onClick={() => setEditing(tag)}><EditIcon /></Button> 
-                        <Button minimal onClick={() => handleTaskRemove(tag)}><TrashIcon /></Button>
+                        <Button minimal onClick={() => handleTagRemove(tag)}><TrashIcon /></Button>
                       </div>
                     </td>
                   </tr>
@@ -141,7 +141,7 @@ const TagsManager = () => {
             </table>
           </>
           : <Typography styles={{ textAlign: "center"}}>There are no created tags!</Typography>}
-          {isCreating && <EditTagPopup onComplete={handleTaskCreate} onClose={() => setIsCreating(false)}/>}
+          {isCreating && <EditTagPopup onComplete={handleTagCreate} onClose={() => setIsCreating(false)}/>}
           {editing && <EditTagPopup tag={editing} onComplete={handleTagEdit} onClose={() => setEditing(null)}/>}
         </div>
       </Card>
@@ -149,7 +149,7 @@ const TagsManager = () => {
   )
 }
 
-const EditTagPopup = ({onComplete, onClose, tag}: any) => {
+const EditTagPopup = ({onComplete, onClose, tag = {}}: any) => {
 
   const labelRef = useRef<any>(null);
   const descriptionRef = useRef<any>(null);
@@ -157,6 +157,7 @@ const EditTagPopup = ({onComplete, onClose, tag}: any) => {
   const handleComplete = () => {
     if (!labelRef.current.value) return;
     onComplete({
+      ...tag,
       id: tag?.id || crypto.randomUUID(),
       label: labelRef.current.value,
       description: descriptionRef.current.value

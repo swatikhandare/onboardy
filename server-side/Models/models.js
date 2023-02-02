@@ -127,7 +127,6 @@ const studentSchema = new mongoose.Schema({
   image: { type: String },
   tags: [{ type: mongoose.Schema.Types.ObjectId, ref: "Tag" }],
   assignedTasks: [{ type: mongoose.Schema.Types.ObjectId, ref: "AssignedTask" }],
-  tasksCompletion: { type: Number, required: true },
 });
 
 const assignedTaskSchema = new mongoose.Schema({

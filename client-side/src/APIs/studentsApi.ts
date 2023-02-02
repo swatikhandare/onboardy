@@ -5,30 +5,50 @@ import { getResourceFromLocalStorage, setResourceAtLocalStorage } from "./localS
 import { fetchTasks } from "./tasksApi";
 
 const fetchStudents = async (): Promise<Student[]> => {
-  // const studentsRes = await fetch('https://63ba193d56043ab3c795ae0e.mockapi.io/students')
-  // const students = await studentsRes.json();
-  // return students.map((student: Student) => ({...student, tasksCompletion: calculateAssignedTasksProgress(student.assignedTasks || []) }));
-  const students = getResourceFromLocalStorage<Student[]>("students");
-  return students.map((student) => ({...student, tasksCompletion: calculateAssignedTasksProgress(student.assignedTasks || []) }));
+  const studentsRes = await fetch('http://localhost:4000/api/students')
+  const students = await studentsRes.json();
+  return students.map((student: Student) => ({...student, tasksCompletion: calculateAssignedTasksProgress(student.assignedTasks || []) }));
+  // const students = getResourceFromLocalStorage<Student[]>("students");
+  // return students.map((student) => ({...student, tasksCompletion: calculateAssignedTasksProgress(student.assignedTasks || []) }));
 }
 
 const createStudent = async (student: Student) => {
-  const students = getResourceFromLocalStorage<Student[]>("students");
-  setResourceAtLocalStorage<Student[]>("students", [...students, student]);
-  matchStudentsWithTasks(student);
+  await fetch('http://localhost:4000/api/students', {
+    method: "POST",
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(student),
+  })
+  // const students = getResourceFromLocalStorage<Student[]>("students");
+  // setResourceAtLocalStorage<Student[]>("students", [...students, student]);
+  // matchStudentsWithTasks(student);
 }
 
-const deleteStudent = async (id: string) => {
-  const students = getResourceFromLocalStorage<Student[]>("students");
-  setResourceAtLocalStorage<Student[]>("students", [...students.filter((student) => student.id !== id)]);
+const deleteStudent = async (_id: string) => {
+  await fetch(`http://localhost:4000/api/students/${_id}`, {
+    method: "DELETE",
+    headers: {
+      'Content-Type': 'application/json',
+    }
+  })
+  // const students = getResourceFromLocalStorage<Student[]>("students");
+  // setResourceAtLocalStorage<Student[]>("students", [...students.filter((student) => student.id !== id)]);
 }
 
 const updateStudent = async (updatedStudent: Student) => {
-  const students = getResourceFromLocalStorage<Student[]>("students");
-  const targetIndex = students.findIndex(student => student.id === updatedStudent.id);
-  const updatedStudents = students.slice();
-  updatedStudents[targetIndex] = updatedStudent;
-  setResourceAtLocalStorage<Student[]>("students", updatedStudents);
+  await fetch(`http://localhost:4000/api/students/${updatedStudent._id}`, {
+    method: "PUT",
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(updatedStudent),
+  })
+  // const students = getResourceFromLocalStorage<Student[]>("students");
+  // const targetIndex = students.findIndex(student => student.id === updatedStudent.id);
+  // const updatedStudents = students.slice();
+  // updatedStudents[targetIndex] = updatedStudent;
+  // setResourceAtLocalStorage<Student[]>("students", updatedStudents);
 }
 
 const fetchStudentById = async (id: string): Promise<Student | null> => {
