@@ -90,6 +90,21 @@ const AttachmentSchema = new mongoose.Schema({
   path: String, 
 });
 
+const MessageSchema = new mongoose.Schema({
+  id: String,
+  author: {
+    type: mongoose.Schema.Types.ObjectId,
+    refPath: "authorType"
+  },
+  authorType: {
+    type: String,
+    enum: ["Student", "Staff"]
+  },
+  text: String,
+  attachments: [AttachmentSchema],
+  createdAt: String
+});
+
 // export const AssignedTask = mongoose.model("AssignedTask", AssignedTaskSchema);
 // export const Attachment = mongoose.model("Attachment", AttachmentSchema);
 // export const Blog = mongoose.model("Blog", BlogSchema);
@@ -123,6 +138,12 @@ const assignedTaskSchema = new mongoose.Schema({
   messages: [{ type: mongoose.Schema.Types.ObjectId, ref: "Message" }],
 });
 
+const FAQSchema = new mongoose.Schema({
+  id: { type: String, required: true },
+  question: { type: String, required: true },
+  answer: { type: String, required: true },
+});
+
 
 module.exports = {
 
@@ -133,4 +154,6 @@ module.exports = {
   Attachment: mongoose.model("Attachment", AttachmentSchema),
   Student: mongoose.model("Student", studentSchema),
   AssignedTask: mongoose.model("AssignedTask", assignedTaskSchema),
+  FAQ: mongoose.model("FAQ", FAQSchema),
+  Message: mongoose.model("Message", MessageSchema),
 };
